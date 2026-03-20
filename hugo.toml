@@ -1,4 +1,5 @@
-baseURL = "/"
+baseURL = "https://boonziman.github.io/realestatedemo/"
+relativeURLs = true
 languageCode = "en-us"
 title = "Elite Homes — Luxury Real Estate"
 uglyURLs = false
