@@ -1,0 +1,51 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Elite Homes — Luxury Real Estate"
+uglyURLs = false
+
+# ──────────────────────────────────────────────
+# Site-wide Parameters
+# ──────────────────────────────────────────────
+[params]
+  description   = "Curating legacy estates for the world's most discerning buyers. Privacy, exclusivity, and flawless aesthetic presentation."
+  author        = "Elite Homes"
+  tagline       = "Curating Legacy Estates"
+  email         = "inquiries@elitehomes.com"
+  phone         = "310.555.0198"
+  address       = "Beverly Hills Office"
+  ogImage       = "/images/og-default.jpg"
+
+[params.social]
+  linkedin = "#"
+
+# ──────────────────────────────────────────────
+# Menu — Main Navigation
+# ──────────────────────────────────────────────
+[menus]
+  [[menus.main]]
+    name   = "Home"
+    url    = "/"
+    weight = 1
+  [[menus.main]]
+    name   = "Estates"
+    url    = "/estates/"
+    weight = 2
+  [[menus.main]]
+    name   = "Agents"
+    url    = "/agents/"
+    weight = 3
+  [[menus.main]]
+    name   = "Contact"
+    url    = "/agents/#contact"
+    weight = 4
+
+# ──────────────────────────────────────────────
+# Output & Build
+# ──────────────────────────────────────────────
+[outputs]
+  home = ["HTML"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

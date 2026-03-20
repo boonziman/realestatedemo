@@ -1,0 +1,75 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {{/* ── Title ── */}}
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+
+  {{/* ── SEO Meta ── */}}
+  <meta name="description" content="{{ .Params.description | default .Site.Params.description }}" />
+  <meta name="author" content="{{ .Site.Params.author }}" />
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  {{/* ── Open Graph ── */}}
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}" />
+  <meta property="og:description" content="{{ .Params.description | default .Site.Params.description }}" />
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image" content="{{ .Params.ogImage | default .Site.Params.ogImage | absURL }}" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+
+  {{/* ── Twitter Card ── */}}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+  <meta name="twitter:description" content="{{ .Params.description | default .Site.Params.description }}" />
+  <meta name="twitter:image" content="{{ .Params.ogImage | default .Site.Params.ogImage | absURL }}" />
+
+  {{/* ── Fonts ── */}}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  {{/* ── Preload hero image for fast LCP ── */}}
+  {{ if .IsHome }}
+  <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuB2JQ62eWiBo2kBgpMjOFIx19zPsKb9vUj7iY253dIFgMIrRH7nlHiQltQ14wSDnzocNYC3A-2KCaz2T9KlqbchLA5WnJWV5zMccHUY2wV7SmAAAwqw6gUguXmWC9Xec741X68C2wr3BHdUj9ko0JoH7lvZYLOB1q0mybpsmwPlG1PVUOXzqfmK87nskKlQ-lQ87-GRGMBM_7JOnsy-yX8jci4t_-jlxRlAJ_Okr93BLaVg2iDk6ErKWOiyboBHW7cht_lDYNJK3lHt=s2048" fetchpriority="high" />
+  {{ end }}
+
+  {{/* ── Preconnect to Google image CDN ── */}}
+  <link rel="preconnect" href="https://lh3.googleusercontent.com" />
+
+  {{/* ── Tailwind CSS (CDN) ── */}}
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary":          "#f0a742",
+            "background-light": "#f8f7f6",
+            "background-dark":  "#221a10",
+            "surface-light":    "#F9F8F6",
+            "text-main":        "#3A3937",
+            "text-muted":       "#8F8E8A",
+            "border-color":     "#E6E5E1",
+          },
+          fontFamily: {
+            "display": ["Newsreader", "serif"],
+            "body":    ["Jost", "sans-serif"],
+            "sans":    ["Jost", "sans-serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg":      "0.25rem",
+            "xl":      "0.5rem",
+            "full":    "0.75rem",
+          },
+        },
+      },
+    }
+  </script>
+
+  {{/* ── Custom Stylesheet ── */}}
+  <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}" />
+</head>

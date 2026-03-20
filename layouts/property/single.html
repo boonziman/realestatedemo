@@ -1,0 +1,187 @@
+{{/*
+  PROPERTY DETAILS PAGE — layouts/property/single.html
+  Editorial gallery collage, narrative + inquiry sidebar,
+  amenities, and inline form with JS interaction.
+*/}}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+{{ partial "head.html" . }}
+<body class="bg-background-light text-slate-800 font-sans antialiased min-h-screen">
+
+  {{ partial "header-property.html" . }}
+
+  <main class="w-full">
+
+    {{/* ── Editorial Gallery Collage ── */}}
+    <section class="w-full h-[85vh] flex overflow-hidden bg-slate-100">
+      <div class="w-full md:w-[65%] h-full relative overflow-hidden">
+        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB0zp1xYEHXdXcsyVRtnzKOGkeqs-Q0vFn4IyaRnar01fWUOL7Myk6Urz6qUD034oqhu6wDMbBwgyyjZP0e3x73fLJV1QaovFmiwrwWbO4aCCRh9sRQe9Ckx37RIsLu0CpFd-JVJGF7sXK2t5vpLX6RiNHTM6beHz3qG5KKOxUaZKitcCb5WQ8E3vXwPVxzlxVdCMIjykODBJ6e58YQ1rRgrT0rSsY6Rykne23S4e_jSSs9rbz9ibHBb33BcjYtZC8KyXoFPmE9SReg=w1920');"></div>
+        <div class="absolute inset-0 bg-black/5"></div>
+        <div class="absolute bottom-10 left-10">
+          <button class="bg-white/90 backdrop-blur px-6 py-3 flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-primary hover:text-white transition-all">
+            <span class="material-symbols-outlined text-base">fullscreen</span>
+            Explore Gallery (24)
+          </button>
+        </div>
+      </div>
+      <div class="hidden md:flex flex-col w-[35%] h-full gap-0.5 bg-slate-200">
+        <div class="h-1/2 relative overflow-hidden group">
+          <div class="w-full h-full bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBfDGIxeqAP4KjC2fIeoCBuyQ3CgMKdiyzBJYqNUqgcjsmJKJPwABLCXyJ2wLP7vJebvBJYq3GtGhxLu68WQMwjLUKcXgb0EFUzUv8hL4trHT0zB3JnUEGiSqX9O2yhHK49yB1i6qYQS9_9qph7sVZky6bGrbbpsVCxc7CYpMFeG3QWmjfuirDmTio_0gb6TYeeD3cChjzoxmSCR4cI_lgT6nXaQFx7E9pw0VA9dKAL7wpGHwvnP3bJdPuy-U-2EZnn1hypzEj2Evh=w1920');"></div>
+        </div>
+        <div class="h-1/2 relative overflow-hidden group">
+          <div class="w-full h-full bg-cover bg-center transition-transform duration-[2s] group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_Rj_L8kjilHCbhwEF3xSlPy49QdOzXYmcxT4GilISo2QrN189LMTw0jbYtuvbcYlLrnOSdr9fZom0fgMBgxmi8kLMdgZiUFLpOlnQ8MoqwIKmSYlBi6xYzw4AcgPftgCbXEKldOXEdlE17jUHP7pgh5hAN_R_gkoR1XtRbXjxiN-V6aOAVa1w2ODN-bXI3qwvg6TdC2WM4Zt4uvEUwrBfd8REOjoMb3WePqOmsaOoOH-chzCM_6R0Ksq8KJKBl7dSgiZvqwMTdblC=w1920');"></div>
+        </div>
+      </div>
+    </section>
+
+    {{/* ── Content Split ── */}}
+    <div class="max-w-screen-2xl mx-auto px-8 lg:px-20 py-24 lg:py-32 flex flex-col lg:flex-row gap-20 xl:gap-32">
+
+      {{/* Column One: Narrative */}}
+      <div class="flex-1 max-w-4xl">
+        <div class="mb-20">
+          <nav class="flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-primary mb-8">
+            <span>Exclusive Listing</span>
+            <span class="w-8 h-[1px] bg-primary"></span>
+            <span>Beverly Hills</span>
+          </nav>
+          <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-slate-900 mb-8 leading-[0.9]">
+            The Belvedere <br/><span class="italic">Estate</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-slate-400 font-display italic mb-12">
+            123 Luxury Way, Platinum Triangle, CA
+          </p>
+
+          {{/* Stats */}}
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-12 py-12 border-y border-slate-200">
+            <div class="space-y-2">
+              <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">Bedrooms</span>
+              <p class="font-display text-4xl text-slate-900">05</p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">Bathrooms</span>
+              <p class="font-display text-4xl text-slate-900">07</p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">Living Space</span>
+              <p class="font-display text-4xl text-slate-900">12.5k<span class="text-sm ml-1 uppercase">sqft</span></p>
+            </div>
+            <div class="space-y-2">
+              <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">Lot Size</span>
+              <p class="font-display text-4xl text-slate-900">3.2<span class="text-sm ml-1 uppercase">acres</span></p>
+            </div>
+          </div>
+        </div>
+
+        <article class="prose prose-2xl max-w-none">
+          <p class="drop-cap font-display text-2xl leading-relaxed text-slate-700 mb-12">
+            Nestled high in the prestigious hills, The Belvedere Estate represents the pinnacle of modern luxury and architectural refinement. This masterfully curated property offers an unparalleled living experience, where every detail has been meticulously considered to create a sanctuary of elegance and serenity.
+          </p>
+
+          <div class="my-24 group overflow-hidden">
+            <img alt="Expansive master bedroom with city views" class="w-full h-[600px] object-cover transition-transform duration-[3s] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM8tcX8FWIRsF0PR5yifLwV1nLaRgC-Yhol0-UB3MjOWR6Wv8LdW2IAyxB1Rfk7VbuPXqYX2EPUBNm-kwvdGed4oRVQt2nEjKGvHbQGsApBAgijIlSDqx8afSzjtdFJIcnkOcicl1BKVeIhMVf9EM4W277pg8M8gAj1v46DhqZ2kVx6sw1gp_zm3JIacMD98YSKWVJnj-zw91M4AB0vQfTctehWljVgidMUP1QIVY3A74JeQeW41X3-dPsFAX49zc3nN2zT2UeHDMz=w1200" loading="lazy" />
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-center text-slate-400 mt-6 italic">Visual Study: The Primary Sanctuary at Dawn</p>
+          </div>
+
+          <p class="font-display text-xl leading-relaxed text-slate-600 mb-12">
+            Upon entering the grand foyer, one is immediately struck by the sheer scale and luminosity of the space. Soaring 20-foot ceilings and floor-to-ceiling automated glass walls seamlessly dissolve the boundaries between indoor and outdoor living. The natural light dances across custom honed limestone floors, while the open-plan layout ensures a fluid transition from the formal living areas to the state-of-the-art culinary kitchen.
+          </p>
+          <p class="font-display text-xl leading-relaxed text-slate-600">
+            The Belvedere Estate is not just a home; it is a legacy property designed for those who demand the extraordinary. Beyond the interiors, the grounds are an entertainer's dream. An infinity-edge pool appears to spill into the horizon, complemented by a sunken fire pit and meticulously landscaped gardens that offer absolute privacy.
+          </p>
+        </article>
+
+        {{/* ── Amenities ── */}}
+        <div class="mt-32 pt-20 border-t border-slate-200">
+          <h3 class="font-display text-3xl font-light mb-12 text-slate-900 italic">Estate Provisions</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-16">
+            <div class="flex items-center gap-4 group">
+              <span class="material-symbols-outlined text-primary text-xl font-light transition-transform group-hover:scale-110">star</span>
+              <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-600">Infinity Edge Horizon Pool</span>
+            </div>
+            <div class="flex items-center gap-4 group">
+              <span class="material-symbols-outlined text-primary text-xl font-light transition-transform group-hover:scale-110">movie</span>
+              <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-600">Private Dolby Atmos Cinema</span>
+            </div>
+            <div class="flex items-center gap-4 group">
+              <span class="material-symbols-outlined text-primary text-xl font-light transition-transform group-hover:scale-110">wine_bar</span>
+              <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-600">1,000 Bottle Temperature Vault</span>
+            </div>
+            <div class="flex items-center gap-4 group">
+              <span class="material-symbols-outlined text-primary text-xl font-light transition-transform group-hover:scale-110">settings_remote</span>
+              <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-600">Full Home Intelligence OS</span>
+            </div>
+            <div class="flex items-center gap-4 group">
+              <span class="material-symbols-outlined text-primary text-xl font-light transition-transform group-hover:scale-110">spa</span>
+              <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-600">Wellness Pavilion &amp; Onsen</span>
+            </div>
+            <div class="flex items-center gap-4 group">
+              <span class="material-symbols-outlined text-primary text-xl font-light transition-transform group-hover:scale-110">directions_car</span>
+              <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-600">6-Car Subterranean Gallery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{/* Column Two: Inquiry Sidebar */}}
+      <aside class="w-full lg:w-[460px] flex-shrink-0">
+        <div class="sticky top-32">
+          <div class="bg-white border border-slate-200 p-10 xl:p-14 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)]">
+            <div class="mb-12">
+              <p class="text-primary font-display text-4xl mb-2 font-medium">$24,500,000</p>
+              <h2 class="font-display text-2xl font-light text-slate-900 mb-4">Request Private Viewing</h2>
+              <div class="w-12 h-[1px] bg-primary mb-6"></div>
+              <p class="text-slate-500 text-xs leading-relaxed tracking-wide">Enter your details to coordinate a bespoke tour of the estate with our premier concierge team.</p>
+            </div>
+            <form class="space-y-8" id="inquiryForm">
+              <div class="relative">
+                <input class="peer w-full bg-transparent border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-primary text-slate-900 placeholder-transparent" id="name" placeholder="Full Name" type="text" />
+                <label class="absolute left-0 -top-3.5 text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-[10px]" for="name">Full Name</label>
+              </div>
+              <div class="relative">
+                <input class="peer w-full bg-transparent border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-primary text-slate-900 placeholder-transparent" id="email" placeholder="Email Address" type="email" />
+                <label class="absolute left-0 -top-3.5 text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-[10px]" for="email">Email Address</label>
+              </div>
+              <div class="relative">
+                <textarea class="peer w-full bg-transparent border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-primary text-slate-900 placeholder-transparent resize-none" id="message" placeholder="Message" rows="2"></textarea>
+                <label class="absolute left-0 -top-3.5 text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-slate-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-[10px]" for="message">Concierge Notes</label>
+              </div>
+              <button class="group w-full bg-primary hover:bg-[#c4a030] text-white font-bold tracking-[0.3em] uppercase text-[10px] py-6 transition-all duration-500 relative overflow-hidden" onclick="handleInquiry(this)" type="button">
+                <span class="relative z-10">Initialize Inquiry</span>
+                <div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+              </button>
+            </form>
+
+            {{/* Agent Context */}}
+            <div class="mt-12 pt-12 border-t border-slate-200 flex items-center gap-6">
+              <div class="w-14 h-14 rounded-full bg-slate-100 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDK6USSjk__XIHIkFf2Tb1_hhs57QP9N4TDiNUONiZti_PhAbIdHLiXoi7qoGXVZ5xrwHVdCE2VA-iucF48UnzaX1fimaHQu1SlEuUcYDkHjNZBFvtfh4MnDv_8dDCriBNOun3QYChAUAg2fXehvxpkneU9TJQzll12KnMK6bJTdIOKgFelARbkQv5WSbIhCWfZ0Dvzs2tjbxDrxHf-du5fn2njhvdMY7R5aZ_WbNwfb-yRDwDq3C4sZWD6_4Zq26diJjezSh-7N2nf=w1200');"></div>
+              <div>
+                <p class="font-display text-lg font-medium text-slate-900">Alexander Sterling</p>
+                <p class="text-[9px] text-primary font-bold uppercase tracking-[0.2em]">Global Luxury Partner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    function handleInquiry(btn) {
+      var span = btn.querySelector('span');
+      span.innerText = 'Processing...';
+      btn.classList.add('btn-loading');
+      setTimeout(function() {
+        var form = document.getElementById('inquiryForm');
+        form.innerHTML = '<div class="py-12 flex flex-col items-center text-center space-y-4">' +
+          '<span class="material-symbols-outlined text-5xl text-primary font-light">done_all</span>' +
+          '<h3 class="font-display text-2xl font-light">Inquiry Dispatched</h3>' +
+          '<p class="text-xs text-slate-500 tracking-wide">Mr. Sterling\'s office will reach out to you within the hour.</p>' +
+        '</div>';
+        btn.style.display = 'none';
+      }, 1800);
+    }
+  </script>
+
+</body>
+</html>
