@@ -11,8 +11,8 @@
   {{ partial "header.html" . }}
 
   {{/* ── Hero Section ── */}}
-  <section class="relative h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0 hero-fade-in bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2JQ62eWiBo2kBgpMjOFIx19zPsKb9vUj7iY253dIFgMIrRH7nlHiQltQ14wSDnzocNYC3A-2KCaz2T9KlqbchLA5WnJWV5zMccHUY2wV7SmAAAwqw6gUguXmWC9Xec741X68C2wr3BHdUj9ko0JoH7lvZYLOB1q0mybpsmwPlG1PVUOXzqfmK87nskKlQ-lQ87-GRGMBM_7JOnsy-yX8jci4t_-jlxRlAJ_Okr93BLaVg2iDk6ErKWOiyboBHW7cht_lDYNJK3lHt=s2048');">
+  <section class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0 hero-fade-in bg-cover bg-[center_40%]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2JQ62eWiBo2kBgpMjOFIx19zPsKb9vUj7iY253dIFgMIrRH7nlHiQltQ14wSDnzocNYC3A-2KCaz2T9KlqbchLA5WnJWV5zMccHUY2wV7SmAAAwqw6gUguXmWC9Xec741X68C2wr3BHdUj9ko0JoH7lvZYLOB1q0mybpsmwPlG1PVUOXzqfmK87nskKlQ-lQ87-GRGMBM_7JOnsy-yX8jci4t_-jlxRlAJ_Okr93BLaVg2iDk6ErKWOiyboBHW7cht_lDYNJK3lHt=s2048');">
       <div class="absolute inset-0 bg-[#1A1A19]/30 mix-blend-multiply"></div>
     </div>
     <div class="relative z-10 text-center px-4 max-w-4xl mt-[-5vh]">
@@ -24,7 +24,7 @@
     {{/* ── Floating Search Bar ── */}}
     <div class="absolute bottom-12 md:bottom-24 w-full max-w-5xl px-4 z-20">
       <div class="bg-white rounded shadow-2xl overflow-hidden border border-slate-200">
-        <form class="flex flex-col md:flex-row items-stretch divide-y md:divide-y-0 md:divide-x divide-slate-200" action="{{ "/estates/" | relURL }}" method="get">
+        <form class="flex flex-col md:flex-row items-stretch divide-y md:divide-y-0 md:divide-x divide-slate-200" action="{{ "estates/" | relURL }}" method="get">
           <div class="flex-1 relative flex items-center h-16 md:h-20 px-6 group">
             <span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">location_on</span>
             <input class="w-full bg-transparent border-none focus:ring-0 text-slate-900 placeholder:text-slate-400 text-lg md:text-xl font-display outline-none ml-3" placeholder="Location, City, or ZIP" type="text" />
@@ -49,7 +49,7 @@
             </select>
             <span class="material-symbols-outlined absolute right-6 text-slate-400 pointer-events-none">expand_more</span>
           </div>
-          <a href="{{ "/estates/" | relURL }}" class="h-16 md:h-20 px-8 bg-slate-900 text-white font-bold uppercase tracking-widest text-sm hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 w-full md:w-auto no-underline">
+          <a href="{{ "estates/" | relURL }}" class="h-16 md:h-20 px-8 bg-slate-900 text-white font-bold uppercase tracking-widest text-sm hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 w-full md:w-auto no-underline">
             <span>Search</span>
             <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
           </a>
@@ -65,14 +65,14 @@
         <h3 class="text-sm uppercase tracking-widest text-primary mb-3 font-semibold font-body">Exclusive Collection</h3>
         <h2 class="text-4xl md:text-5xl font-medium text-slate-900">Featured Estates</h2>
       </div>
-      <a href="{{ "/estates/" | relURL }}" class="hidden md:flex items-center gap-2 text-sm uppercase tracking-widest text-slate-600 hover:text-primary transition-colors no-underline">
+      <a href="{{ "estates/" | relURL }}" class="hidden md:flex items-center gap-2 text-sm uppercase tracking-widest text-slate-600 hover:text-primary transition-colors no-underline">
         View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
       </a>
     </div>
 
     <div class="flex overflow-x-auto no-scrollbar gap-8 pb-8 snap-x snap-mandatory px-6 md:px-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]">
       {{/* Card 1 */}}
-      <a href="{{ "/property/belvedere-estate/" | relURL }}" class="property-card rounded min-w-[320px] md:min-w-[420px] h-[420px] md:h-[520px] flex-shrink-0 snap-start bg-slate-100 cursor-pointer no-underline block">
+      <a href="{{ "property/belvedere-estate/" | relURL }}" class="property-card rounded min-w-[320px] md:min-w-[420px] h-[420px] md:h-[520px] flex-shrink-0 snap-start bg-slate-100 cursor-pointer no-underline block">
         <div class="w-full h-full property-card-img bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0F56iX0MMJb9ZIlgmkObTuKjAkpZTmYe8A_oLfpherWJM5Pq12n5ioCBeVsNzFPzMn_vs_yv4GOb95DB0XB-d4pwWL62Cpqu1KWoEp7kl6tOICSITamXMSwJH1OjZuTVRl--Bb6jgGwgDbLlwS_o74ZA-j0qS1s4PH9fnMd8No7PbiGLo_DZL9jVZ-GefXykVuKo1ALaoMit94lF2LTloxt7p9MEu0eJezMe3eOxgHKUzrmD5ABZEtfI5X82a9eL40KgPx6AtDd0R=w1200');"></div>
         <div class="property-card-details">
           <p class="text-primary text-xs uppercase tracking-widest mb-1">Beverly Hills, CA</p>
@@ -81,7 +81,7 @@
         </div>
       </a>
       {{/* Card 2 */}}
-      <a href="{{ "/property/belvedere-estate/" | relURL }}" class="property-card rounded min-w-[320px] md:min-w-[420px] h-[420px] md:h-[520px] flex-shrink-0 snap-start bg-slate-100 cursor-pointer no-underline block">
+      <a href="{{ "property/belvedere-estate/" | relURL }}" class="property-card rounded min-w-[320px] md:min-w-[420px] h-[420px] md:h-[520px] flex-shrink-0 snap-start bg-slate-100 cursor-pointer no-underline block">
         <div class="w-full h-full property-card-img bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAx0NJnleqKC-atluVtLNi4dHst-Ai4Rwuphlxbgnm0XV87-XjnGecSHJbZS388AdE_-qgm9R79sW2iIV1JMUDLKP_m-yDUklqnnG3KpeYqsC2KSWe3W1jlsN4WqlV3waVJzWoXReUGaUP0VL-D6LVJejNaT4nRGxVv6eiRoxMiUszcvurkmkRCl-6FimLqYDeD05Tv5kokCFzkdbG3XVAxQSqr1Pf71IhDcOBA7ZKXHBCmBgQPvPkNxgzhjUkANcEgCTBuo7Ggo6dj=w1200');"></div>
         <div class="property-card-details">
           <p class="text-primary text-xs uppercase tracking-widest mb-1">Aspen, CO</p>
@@ -90,7 +90,7 @@
         </div>
       </a>
       {{/* Card 3 */}}
-      <a href="{{ "/property/belvedere-estate/" | relURL }}" class="property-card rounded min-w-[320px] md:min-w-[420px] h-[420px] md:h-[520px] flex-shrink-0 snap-start bg-slate-100 cursor-pointer no-underline block">
+      <a href="{{ "property/belvedere-estate/" | relURL }}" class="property-card rounded min-w-[320px] md:min-w-[420px] h-[420px] md:h-[520px] flex-shrink-0 snap-start bg-slate-100 cursor-pointer no-underline block">
         <div class="w-full h-full property-card-img bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZj_vc0JZsBqNi3hnxvI292x70HkaFU_sxjWeOgNp4OzcJSalsHlaXPlGgqyzcL6Yp4xQNSQcUtCk60Mee2B8ds7QovPwjlnFnETDnck_u36uFPm6JnmJvs16e76guNjfrDFrHvh_oIzJVj88RP3De7H_Ady04PtwTXDhG9j9Xc_Qh_DQl5tXqIPgVtAeuf8dyISbMKwDxcrGrV6nBHh40M3sV-ghnvsSvJALOLcND7KrqB7I5I4lHqlWVIqz8HAGiDuObsdFlavbh=w1200');"></div>
         <div class="property-card-details">
           <p class="text-primary text-xs uppercase tracking-widest mb-1">Montecito, CA</p>
@@ -99,7 +99,7 @@
         </div>
       </a>
       {{/* Card 4 */}}
-      <a href="{{ "/property/belvedere-estate/" | relURL }}" class="property-card rounded min-w-[320px] md:min-w-[420px] h-[420px] md:h-[520px] flex-shrink-0 snap-start bg-slate-100 cursor-pointer no-underline block">
+      <a href="{{ "property/belvedere-estate/" | relURL }}" class="property-card rounded min-w-[320px] md:min-w-[420px] h-[420px] md:h-[520px] flex-shrink-0 snap-start bg-slate-100 cursor-pointer no-underline block">
         <div class="w-full h-full property-card-img bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJwNmoSl1s49S_rl53U-arl5Sm-ro9CbplnPXdYWYq8yn54WmF7f2DbZN3nZSVS5mjc52RcLdHevUt50A6jYZWqpC3lY1KN50d0xmfwfrJiHOWuMBBihHXf53Lc1r9I727xD8sZBI-BWbw_neDefbDqXxlQMFgrq34cihoiodIcRMq6PC3djnCBEMu4n4vbt0E9B4B_J_N3Fxr96FdyxwQ_pSOWKQ15BBiAhohgoelF436mcZaxuyG_1GWsQS31vg4ZElBxK_cgz9Z=w1200');"></div>
         <div class="property-card-details">
           <p class="text-primary text-xs uppercase tracking-widest mb-1">Miami Beach, FL</p>
