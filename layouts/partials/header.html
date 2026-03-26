@@ -17,14 +17,15 @@
   <div class="hidden md:flex flex-1 justify-end gap-10 items-center">
     <nav class="flex items-center gap-8">
       {{ range .Site.Menus.main }}
-        {{ $isCurrent := or (eq $.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $.RelPermalink .URL)) }}
-        <a href="{{ .URL }}"
+        {{ $menuURL := .URL | relURL }}
+        {{ $isCurrent := or (eq $.RelPermalink $menuURL) (and (ne $menuURL ("" | relURL)) (hasPrefix $.RelPermalink $menuURL)) }}
+        <a href="{{ $menuURL }}"
            class="text-sm uppercase tracking-widest transition-colors duration-200 {{ if $isCurrent }}text-primary{{ else }}text-slate-900 hover:text-primary{{ end }}">
           {{ .Name }}
         </a>
       {{ end }}
     </nav>
-    <a href="{{ "agents/#contact" | relURL }}" class="flex items-center justify-center rounded h-10 px-6 bg-primary text-background-dark text-sm font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors no-underline">
+    <a href="{{ "agents/#contact" | relURL }}" class="glass-btn flex items-center justify-center rounded h-10 px-6 bg-primary/90 text-background-dark text-sm font-bold uppercase tracking-widest hover:bg-primary transition-colors no-underline">
       Inquire
     </a>
   </div>
@@ -52,8 +53,8 @@
   </div>
   <nav class="flex flex-col gap-6 px-8 py-12">
     {{ range .Site.Menus.main }}
-      <a href="{{ .URL }}" class="text-2xl font-display font-medium tracking-tight text-slate-900 hover:text-primary transition-colors no-underline">{{ .Name }}</a>
+      <a href="{{ .URL | relURL }}" class="text-2xl font-display font-medium tracking-tight text-slate-900 hover:text-primary transition-colors no-underline">{{ .Name }}</a>
     {{ end }}
-    <a href="{{ "agents/#contact" | relURL }}" class="mt-4 inline-flex items-center justify-center rounded h-12 px-8 bg-primary text-background-dark text-sm font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors no-underline">Inquire</a>
+    <a href="{{ "agents/#contact" | relURL }}" class="glass-btn mt-4 inline-flex items-center justify-center rounded h-12 px-8 bg-primary/90 text-background-dark text-sm font-bold uppercase tracking-widest hover:bg-primary transition-colors no-underline">Inquire</a>
   </nav>
 </div>
