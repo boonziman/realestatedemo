@@ -12,8 +12,8 @@
 
   {{/* ── Hero Section ── */}}
   <section class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0 hero-fade-in bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0F56iX0MMJb9ZIlgmkObTuKjAkpZTmYe8A_oLfpherWJM5Pq12n5ioCBeVsNzFPzMn_vs_yv4GOb95DB0XB-d4pwWL62Cpqu1KWoEp7kl6tOICSITamXMSwJH1OjZuTVRl--Bb6jgGwgDbLlwS_o74ZA-j0qS1s4PH9fnMd8No7PbiGLo_DZL9jVZ-GefXykVuKo1ALaoMit94lF2LTloxt7p9MEu0eJezMe3eOxgHKUzrmD5ABZEtfI5X82a9eL40KgPx6AtDd0R=s2048');">
-      <div class="absolute inset-0 bg-[#1A1A19]/24 mix-blend-multiply"></div>
+    <div class="absolute inset-0 z-0 hero-fade-in bg-cover bg-[center_55%]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8LuXDbixAIe3dGCK0j59zXMLIktTLf7rEChy62UmKUAsprh39-53gKZhl5OtcaBck2RhTEcrI_a8Vkn6E38ROOYXNgWO1JIiNAv0C_cG6ATnd-NLoRJtV0xC15nnmzV3cRhcMz_4bmUJCRMt_Ml6J1-pNu4nQ6XBBlBTooQfXvYa2_GWDHRvMawe8yRE96uA6Qrpht5L2vjDNlsLwq1cpX1FZK0VbdmIGF0EcAToXw1czywIZ-e31IoDhaQjYpj8s4M3RdN9YtMm0=s2048');">
+      <div class="absolute inset-0 bg-[#0d1117]/45"></div>
     </div>
     <div class="relative z-10 text-center px-4 max-w-4xl mt-[-5vh]">
       <h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-medium leading-tight tracking-tight drop-shadow-lg">
@@ -23,7 +23,7 @@
 
     {{/* ── Floating Search Bar ── */}}
     <div class="absolute bottom-12 md:bottom-24 w-full max-w-5xl px-4 z-20">
-      <div class="glass-panel bg-white/88 rounded shadow-2xl overflow-hidden border border-white/50">
+      <div class="bg-white rounded shadow-2xl overflow-hidden border border-slate-100">
         <form class="flex flex-col md:flex-row items-stretch divide-y md:divide-y-0 md:divide-x divide-slate-200" action="{{ "estates/" | relURL }}" method="get">
           <div class="flex-1 relative flex items-center h-16 md:h-20 px-6 group">
             <span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">location_on</span>
@@ -61,7 +61,7 @@
   {{/* ── Featured Estates Carousel ── */}}
   <section class="py-16 md:py-24 bg-background-light">
     <div class="max-w-7xl mx-auto px-6 md:px-10 mb-10 flex justify-between items-end">
-      <div>
+      <div class="reveal">
         <h3 class="text-sm uppercase tracking-widest text-primary mb-3 font-semibold font-body">Exclusive Collection</h3>
         <h2 class="text-4xl md:text-5xl font-medium text-slate-900">Featured Estates</h2>
       </div>
@@ -116,11 +116,11 @@
   <section class="py-16 md:py-24 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
-        <div class="order-2 md:order-1 relative group">
+        <div class="order-2 md:order-1 relative group reveal">
           <div class="absolute inset-0 bg-primary/10 rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
           <img alt="Professional portrait of a luxury real estate agent" class="w-full h-auto rounded object-cover aspect-[3/4] grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuNZ3BtOO3F_QE3pfxJl4rIo0jvSyBGePXXRrb3gF1l5aZq1DgOeYOX0Axfnw_AJR5IGpeVxSqf3L7E2TMCVNXaoNDSQbxP0dwn6eqalZ6QR_p4oaqtc-corQLQFbCel6ehdFRjCjLeFO-ue-0_cfPB-mK-9FE8xIpArbatG753jS14ZPybC37_-ZLwxJg8st4jqlkO0PAtAyVJBZ3wzcc8bxBQPC87tj81AIfs5SOWoH4Cqtc6ld_pIzxtRHYEIflS_q01DQcQ0Jc=w1200" />
         </div>
-        <div class="order-1 md:order-2 flex flex-col justify-center">
+        <div class="order-1 md:order-2 flex flex-col justify-center reveal reveal-delay-2">
           <div class="w-12 h-[1px] bg-primary mb-8"></div>
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium text-slate-900 mb-8 leading-tight">
             The Art of <br/>Real Estate

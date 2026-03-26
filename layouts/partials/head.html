@@ -32,7 +32,7 @@
 
   {{/* ── Preload hero image for fast LCP ── */}}
   {{ if .IsHome }}
-  <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuD0F56iX0MMJb9ZIlgmkObTuKjAkpZTmYe8A_oLfpherWJM5Pq12n5ioCBeVsNzFPzMn_vs_yv4GOb95DB0XB-d4pwWL62Cpqu1KWoEp7kl6tOICSITamXMSwJH1OjZuTVRl--Bb6jgGwgDbLlwS_o74ZA-j0qS1s4PH9fnMd8No7PbiGLo_DZL9jVZ-GefXykVuKo1ALaoMit94lF2LTloxt7p9MEu0eJezMe3eOxgHKUzrmD5ABZEtfI5X82a9eL40KgPx6AtDd0R=s2048" fetchpriority="high" />
+  <link rel="preload" as="image" href="https://lh3.googleusercontent.com/aida-public/AB6AXuB8LuXDbixAIe3dGCK0j59zXMLIktTLf7rEChy62UmKUAsprh39-53gKZhl5OtcaBck2RhTEcrI_a8Vkn6E38ROOYXNgWO1JIiNAv0C_cG6ATnd-NLoRJtV0xC15nnmzV3cRhcMz_4bmUJCRMt_Ml6J1-pNu4nQ6XBBlBTooQfXvYa2_GWDHRvMawe8yRE96uA6Qrpht5L2vjDNlsLwq1cpX1FZK0VbdmIGF0EcAToXw1czywIZ-e31IoDhaQjYpj8s4M3RdN9YtMm0=s2048" fetchpriority="high" />
   {{ end }}
 
   {{/* ── Preconnect to Google image CDN ── */}}
@@ -72,4 +72,7 @@
 
   {{/* ── Custom Stylesheet ── */}}
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}" />
+
+  {{/* ── Site JS ── */}}
+  <script src="{{ "js/main.js" | relURL }}" defer></script>
 </head>
